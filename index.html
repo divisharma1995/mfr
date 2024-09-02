@@ -202,22 +202,22 @@ function getOS() {
     
     if (os === "Windows 10") {
         document.title = "Welcome Windows 10 User!";
-        //document.body.innerHTML = "<h1>You are using Windows 10</h1>";
+        document.querySelector('.os').innerHTML = "<h1>You are using Windows 10</h1>";
     } else if (os === "Mac OS X") {
         document.title = "Welcome Mac User!";
-        //document.body.innerHTML = "<h1>You are using macOS</h1>";
+        document.querySelector('.os').innerHTML = "<h1>You are using macOS</h1>";
     } else if (os === "Linux") {
         document.title = "Welcome Linux User!";
-        //document.body.innerHTML = "<h1>You are using Linux</h1>";
+        document.querySelector('.os').innerHTML = "<h1>You are using Linux</h1>";
     } else if (os === "Android") {
         document.title = "Welcome Android User!";
-        //document.body.innerHTML = "<h1>You are using Android</h1>";
+        document.querySelector('.os').innerHTML = "<h1>You are using Android</h1>";
     } else if (os === "iOS") {
         document.title = "Welcome iOS User!";
-        document.body.innerHTML = "<h1>You are using iOS</h1>";
+        document.querySelector('.os').innerHTML = "<h1>You are using iOS</h1>";
     } else {
         document.title = "Welcome!";
-        //document.body.innerHTML = "<h1>Operating System not recognized</h1>";
+        document.querySelector('.os').innerHTML = "<h1>Operating System not recognized</h1>";
     }
 }
 
