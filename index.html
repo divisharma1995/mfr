@@ -12,6 +12,7 @@
 <meta content="" name="description"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width" name="viewport"/>
+
 <style>
 		.bee-row,
 		.bee-row-content {
@@ -172,6 +173,35 @@
 			margin-right: 0
 		}
 	</style>
+	<script>
+		function updateContentBasedOnOS() {
+    const os = getOS();
+    
+    if (os === "Windows 10") {
+        document.title = "Welcome Windows 10 User!";
+        document.body.innerHTML = "<h1>You are using Windows 10</h1>";
+    } else if (os === "Mac OS X") {
+        document.title = "Welcome Mac User!";
+        document.body.innerHTML = "<h1>You are using macOS</h1>";
+    } else if (os === "Linux") {
+        document.title = "Welcome Linux User!";
+        document.body.innerHTML = "<h1>You are using Linux</h1>";
+    } else if (os === "Android") {
+        document.title = "Welcome Android User!";
+        document.body.innerHTML = "<h1>You are using Android</h1>";
+    } else if (os === "iOS") {
+        document.title = "Welcome iOS User!";
+        document.body.innerHTML = "<h1>You are using iOS</h1>";
+    } else {
+        document.title = "Welcome!";
+        document.body.innerHTML = "<h1>Operating System not recognized</h1>";
+    }
+}
+
+// Call the function when the page loads
+window.onload = updateContentBasedOnOS;
+
+	</script>
 </head>
 <body>
 <div class="bee-page-container">
