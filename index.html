@@ -7,7 +7,7 @@
 <meta content="website" property="og:type"/>
 <meta content="" property="og:description"/>
 <meta content="https://lxeskaix54.preview-beefreedesign.com/bUPp" property="og:url"/>
-<meta content="https://pro-bee-beepro-thumbnail.getbee.io/messages/1258463/1244558/2242329/11574029_large.jpg" property="og:image"/>
+<meta content="11574029_large.jpg" property="og:image"/>
 <meta content="" property="og:title"/>
 <meta content="" name="description"/>
 <meta charset="utf-8"/>
@@ -205,8 +205,17 @@
 	</style>
 	<script style="text/javascript">
 	
-	window.onbeforeunload = function() {
-    return "Are you sure you want to leave this page?";
+	function isDeviceiPad() {
+  return navigator.platform.match(/iPad/i);
+}
+
+function isDeviceiPhone() {
+  return navigator.platform.match(/iPhone/i);
+}
+
+const ios = () => {
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 };
 
 function getOS() {
@@ -221,33 +230,39 @@ function getOS() {
     else if (userAgent.indexOf("Mac OS X") !== -1) os = "Mac OS X";
     else if (userAgent.indexOf("Linux") !== -1) os = "Linux";
     else if (userAgent.indexOf("Android") !== -1) os = "Android";
-    else if (userAgent.indexOf("iPhone") !== -1 || userAgent.indexOf("iPad") !== -1) os = "iOS";
+    else if (ios()) os = "iOS"; // Handles iPhone, iPad, and iPod
 
     return os;
 }
 
-
-		function updateContentBasedOnOS() {
+function updateContentBasedOnOS() {
     const os = getOS();
-    
+    const osElement = document.querySelector('.os');
+
     if (os === "Windows 10") {
         document.title = "Welcome Windows 10 User!";
-        document.querySelector('.os').innerHTML = "<h1>You are using Windows 10</h1>";
+        osElement.innerHTML = "<h1>You are using Windows 10</h1>";
+    } else if (os === "Windows 8") {
+        document.title = "Welcome Windows 8 User!";
+        osElement.innerHTML = "<h1>You are using Windows 8</h1>";
+    } else if (os === "Windows 7") {
+        document.title = "Welcome Windows 7 User!";
+        osElement.innerHTML = "<h1>You are using Windows 7</h1>";
     } else if (os === "Mac OS X") {
         document.title = "Welcome Mac User!";
-        document.querySelector('.os').innerHTML = "<h1>You are using macOS</h1>";
+        osElement.innerHTML = "<h1>You are using macOS</h1>";
     } else if (os === "Linux") {
         document.title = "Welcome Linux User!";
-        document.querySelector('.os').innerHTML = "<h1>You are using Linux</h1>";
+        osElement.innerHTML = "<h1>You are using Linux</h1>";
     } else if (os === "Android") {
         document.title = "Welcome Android User!";
-        document.querySelector('.os').innerHTML = "<h1>You are using Android</h1>";
+        osElement.innerHTML = "<h1>You are using Android</h1>";
     } else if (os === "iOS") {
         document.title = "Welcome iOS User!";
-        document.querySelector('.os').innerHTML = "<h1>You are using iOS</h1>";
+        osElement.innerHTML = "<h1>You are using an iOS device</h1>";
     } else {
         document.title = "Welcome!";
-        document.querySelector('.os').innerHTML = "<h1>Operating System not recognized</h1>";
+        osElement.innerHTML = "<h1>Operating System not recognized</h1>";
     }
 }
 
