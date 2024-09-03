@@ -203,6 +203,8 @@
 			}
 		}
 	</style>
+	
+	
 	<script style="text/javascript">
 	
 	function isDeviceiPad() {
@@ -223,7 +225,8 @@ function getOS() {
     let os = "Unknown";
 	
     if (userAgent.indexOf("Windows NT 10.0") !== -1) os = "Windows 10";
-    else if (userAgent.indexOf("Windows NT 6.2") !== -1) os = "Windows 8";
+    else if (userAgent.indexOf("Windows NT 11.0") !== -1) os = "Windows 11";
+	else if (userAgent.indexOf("Windows NT 6.2") !== -1) os = "Windows 8";
     else if (userAgent.indexOf("Windows NT 6.1") !== -1) os = "Windows 7";
     else if (userAgent.indexOf("Windows NT 6.0") !== -1) os = "Windows Vista";
     else if (userAgent.indexOf("Windows NT 5.1") !== -1) os = "Windows XP";
@@ -238,23 +241,28 @@ function getOS() {
 function updateContentBasedOnOS() {
     const os = getOS();
     const osElement = document.querySelector('.os');
+	const osLogo = document.querySelector('#os');
 	
-	
-    if (os === "Windows 10") {
+	var os_logo = document.getElementById("os");
+    if (os === "Windows 11") {
+        document.title = "Welcome Windows 11 User!";
+        osElement.innerHTML = "<h1>You are using Windows 11</h1>";
+		osLogo.src = "images/microsoft.jpg"; 
+    }(os === "Windows 10") {
         document.title = "Welcome Windows 10 User!";
         osElement.innerHTML = "<h1>You are using Windows 10</h1>";
-		var edit_save = document.getElementById("os");
-		os.src = "images/mmm.jpg"; 
-    } else if (os === "Windows 8") {
+		
+		osLogo.src = "images/microsoft.jpg"; 
+    }  else if (os === "Windows 8") {
         document.title = "Welcome Windows 8 User!";
         osElement.innerHTML = "<h1>You are using Windows 8</h1>";
-		var edit_save = document.getElementById("os");
-		os.src = "images/mmm.jpg";
+		
+		os_logo.src = "images/microsoft.jpg";
     } else if (os === "Windows 7") {
         document.title = "Welcome Windows 7 User!";
         osElement.innerHTML = "<h1>You are using Windows 7</h1>";
-		var edit_save = document.getElementById("os");
-		os.src = "images/mmm.jpg";
+		
+		os_logo.src = "images/microsoft.jpg";
     } else if (os === "Mac OS X") {
         document.title = "Welcome Mac User!";
         osElement.innerHTML = "<h1>You are using macOS</h1>";
@@ -267,6 +275,8 @@ function updateContentBasedOnOS() {
     } else if (os === "iOS") {
         document.title = "Welcome iOS User!";
         osElement.innerHTML = "<h1>You are using an iOS device</h1>";
+		var os_logo = document.getElementById("os");
+		os_logo.src = "images/apple.jpg";
     } else {
         document.title = "Welcome!";
         osElement.innerHTML = "<h1>Operating System not recognized</h1>";
@@ -295,11 +305,11 @@ function updateContentBasedOnOS() {
 </div>
 <div class="bee-block bee-block-5 bee-button"><a class="bee-button-content" href="tel:+1(800)638-0642" style="font-size: 50px; background-color: #ffffff; border-bottom: 0px solid transparent; border-left: 0px solid transparent; border-radius: 4px; border-right: 0px solid transparent; border-top: 0px solid transparent; color: #000000; direction: ltr; font-family: inherit; font-weight: 700; letter-spacing: 0px; max-width: 100%; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; padding-top: 5px; width: auto; display: inline-block;" target="_blank"><span style="word-break: break-word; font-size: 50px; line-height: 120%; letter-spacing: normal;">+1(800)638-0642</span></a></div>
 <div class="bee-block bee-block-6 bee-paragraph">
-<p>"Mac Defender.mpkg" will damage your computer. Browser downloaded the virus. It contains the "OSX.MacDefender.A" Malware.</p>
+<p>"Mac Defender.mpkg" will damage your computer. Browser downloaded the virus. It contains the "OSX.MacDefender.A" Malware..</p>
 </div>
 <div class="bee-block bee-block-7 bee-paragraph">
 <p>Contact Apple MAC for support immediately to secure your computer : <a href="tel:+1(800)638-0642">+1(800)638-0642</a></p>
-<!--<p class="os">Welcome</p>-->
+<p class="os">Welcome</p>
 </div>
 </div>
 </div>
