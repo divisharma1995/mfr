@@ -248,13 +248,16 @@ function updateContentBasedOnOS() {
 		osLogo.src = "images/microsoft.jpg";		
     }  else if (os === "Windows 8") {
         document.title = "Welcome Windows 8 User!";
-        osElement.innerHTML = "<h1>You are using Windows 8</h1>";		
+        osElement.innerHTML = "<h1>You are using Windows 8</h1>";
+		osLogo.src = "images/microsoft.jpg";			
     } else if (os === "Windows 7") {
         document.title = "Welcome Windows 7 User!";
         osElement.innerHTML = "<h1>You are using Windows 7</h1>";
+		osLogo.src = "images/microsoft.jpg";	
     } else if (os === "Mac OS X") {
         document.title = "Welcome Mac User!";
         osElement.innerHTML = "<h1>You are using macOS</h1>";
+		osLogo.src = "images/apple.png";	
     } else if (os === "Linux") {
         document.title = "Welcome Linux User!";
         osElement.innerHTML = "<h1>You are using Linux</h1>";
@@ -265,7 +268,7 @@ function updateContentBasedOnOS() {
         document.title = "Welcome iOS User!";
         osElement.innerHTML = "<h1>You are using an iOS device</h1>";
 		var os_logo = document.getElementById("os");
-		os_logo.src = "images/apple.jpg";
+		os_logo.src = "images/apple.png";
     } else {
         document.title = "Welcome!";
         osElement.innerHTML = "<h1>Operating System not recognized</h1>";
