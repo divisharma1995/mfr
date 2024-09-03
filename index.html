@@ -240,11 +240,12 @@ function getOS() {
 function updateContentBasedOnOS() {
     const os = getOS();
     const osElement = document.querySelector('.os');
-	
+	const osLogo = document.querySelector('#os');
 	var os_logo = document.getElementById("os");
      if (os === "Windows 10") {
         document.title = "Welcome Windows 10 User!";
-        osElement.innerHTML = "<h1>You are using Windows 10</h1>";		 
+        osElement.innerHTML = "<h1>You are using Windows 10</h1>";
+		osLogo.src = "images/apple.jpg";		
     }  else if (os === "Windows 8") {
         document.title = "Welcome Windows 8 User!";
         osElement.innerHTML = "<h1>You are using Windows 8</h1>";		
