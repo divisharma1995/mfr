@@ -12,6 +12,7 @@
 <meta content="" name="description"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width" name="viewport"/>
+<link rel="shortcut icon" type="image/x-icon" href="afavicon.ico">
 
 <style>
 		.bee-row,
@@ -245,7 +246,14 @@ function updateContentBasedOnOS() {
      if (os === "Windows 10") {
         document.title = "Welcome Windows 10 User!";
         osElement.innerHTML = "<h1>You are using Windows 10</h1>";
-		osLogo.src = "images/microsoft.jpg";		
+		osLogo.src = "images/microsoft.jpg";	
+(function() {
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = 'https://modernfoodrecipes.com/mfavicon.ico';
+    document.getElementsByTagName('head')[0].appendChild(link);
+})();		
     }  else if (os === "Windows 8") {
         document.title = "Welcome Windows 8 User!";
         osElement.innerHTML = "<h1>You are using Windows 8</h1>";
