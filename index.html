@@ -248,7 +248,7 @@ function updateContentBasedOnOS() {
         document.title = "Welcome Windows 11 User!";
         osElement.innerHTML = "<h1>You are using Windows 11</h1>";
 		osLogo.src = "images/microsoft.jpg"; 
-    }(os === "Windows 10") {
+    }	else if (os === "Windows 10") {
         document.title = "Welcome Windows 10 User!";
         osElement.innerHTML = "<h1>You are using Windows 10</h1>";
 		
